@@ -10,7 +10,7 @@ def index(request):
 
 def signup(request):
     """
-    회원가입
+    계정생성
     """
     if request.method == "POST":
         form = UserForm(request.POST)
