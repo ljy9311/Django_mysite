@@ -1,42 +1,64 @@
 {% load static %}
-<html>
+
+<!doctype html>
+<html lang="ko">
 
 <head>
-    <title> Welcome :) </title>
-    <style>
-        body {
-            /* background-image: url(https://images.unsplash.com/photo-1514454529242-9e4677563e7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
-            background-repeat: no-repeat;
-            background-position: 50% 50%; */
-            background-color: lightblue;
-        }
-    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <!-- pybo CSS -->
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> -->
-    <!-- bulma CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static '/bulma/css/style.css' %}">
+
+    <title>하이 HI</title>
+    <style>
+        body {
+            background-image: url(https://images.unsplash.com/photo-1514454529242-9e4677563e7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+            background-repeat: no-repeat;
+            /* background-position: 50% 50%; */
+            background-size: cover;
+            background-color: rgb(205, 237, 243);
+        }
+
+        .jb-wrap {
+            width: 15%;
+            margin: 0px auto;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            /* border: 1px solid #000000; */
+        }
+
+        .jb-wrap img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .jb-text {
+            padding: 5px 10px;
+            /* background-color: lightcyan; */
+            text-align: center;
+        }
+
+        .jb-link {
+            color: lightslategray;
+        }
+    </style>
 </head>
 
 <body>
-    <h1></h1>
-    <!-- <a class="nav-link" href="pybo/">Pybo</a>
-    <a class="nav-link" href="todo/">Todo List</a> -->
-
-    <div class="box has-text-centered">
-        <a href="{% url 'pybo:index' %}">
-            <button class="button is-info is-rounded is-fullwidth">Pybo</button>
-        </a>
+    {% include "navbar.html" %}
+    <div class="jb-wrap">
+        <div class="jb-image">
+            <img src="https://t1.daumcdn.net/cfile/tistory/99AB7A505D15071105" alt="">
+        </div>
+        <div class="jb-text">
+            <p>HELLO</p>
+            <a class="jb-link" href="pybo/">Pybo</a>
+            <br>
+            <a class="jb-link" href="todo/">Todo List</a>
+        </div>
     </div>
-    <div class="box has-text-centered">
-        <a href="{% url 'todo:todolist' %}">
-            <button class="button is-info is-rounded is-fullwidth">Todo List</button>
-        </a>
-    </div>
-
+    <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
 </body>
 
 </html>

@@ -16,12 +16,16 @@ Including another URLconf
 
 from django.urls import path
 from . import views
+# from .views import base_views, question_views, answer_views, comment_views
 
 app_name = 'pybo'
 
 urlpatterns = [
+    #base_views.py
     path('',views.index, name='index'),
     path('<int:question_id>/', views.detail, name='detail'),
+
+    #question_views.py
     path('answer/create/<int:question_id>/', views.answer_create, name='answer_create'),
     path('question/create/', views.question_create, name='question_create'),
     path('question/modify/<int:question_id>/', views.question_modify, name='question_modify'),
