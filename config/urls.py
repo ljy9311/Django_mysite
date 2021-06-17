@@ -21,15 +21,16 @@ import common
 # from todo import views
 from django.conf import settings
 from django.conf.urls.static import static
+from pybo.views import base_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pybo/', include('pybo.urls')),
     path('common/', include('common.urls')),
 	path('todo/', include('todo.urls')),
-    path('', common.views.index),
+    path('', common.views.index, name='index'),
 
-    # path('', base_views.index, name='index'),  # '/' 에 해당되는 path
+    path('pybo/index', base_views.index, name='pyboIndex'),
 ]
 
 urlpatterns += static(

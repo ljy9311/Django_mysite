@@ -13,7 +13,8 @@ class IndexView(generic.ListView):
     # template_name = 'todo/list.html'
     
     def get_queryset(self):
-        return TodoList.objects.all()
+        # return TodoList.objects.all()
+        return TodoList.objects.order_by('date_deadline')
 
 class DetailView(generic.DetailView):
     model = TodoList

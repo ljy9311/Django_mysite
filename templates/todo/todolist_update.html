@@ -4,6 +4,9 @@
 
 {% block content %}
 
+<!-- bulma CSS -->
+<link rel="stylesheet" type="text/css" href="{% static '/bulma/css/style.css' %}">
+
 <div class="box has-text-centered">
     <a href="{% url 'todo:todolist' %}">
         <button class="button is-info is-rounded is-fullwidth">Todo List Home</button>
