@@ -2,6 +2,11 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from common.forms import UserForm
 
+def index(request):
+    """
+    main page
+    """
+    return render(request, 'index.html')
 
 def signup(request):
     """

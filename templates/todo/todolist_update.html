@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="box has-text-centered">
+    <a href="{% url 'todo:todolist' %}">
+        <button class="button is-info is-rounded is-fullwidth">Todo List Home</button>
+    </a>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="button is-light" type="submit" value="Update">
+    <a class="button is-light" href="{% url 'todo:todolist' %}">
+        취소
+    </a>
+</form>
+
+
+{% endblock content %}

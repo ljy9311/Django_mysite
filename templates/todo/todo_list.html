@@ -1,0 +1,44 @@
+<!-- {% extends 'base.html' %}
+
+{% block title %}내가 할일 뭐지?{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for todo in to_do_list %}
+    # to_do_list 는 클래스에서 지정된 객체 리스트, context_object_name 에 지정된 값
+    # 이 객체에는, 모든 TodoList 를 포함한, TodoList.objects.all() 을 포함
+    # def get_queryset(self) 를 통해서 객체를 포함함
+
+    <li>할일 제목 : {{ todo.name }}</li>
+    <li>생성 날짜 : {{ todo.date_created }}</li>
+    <li>데드라인 날짜 : {{ todo.date_deadline }}</li>
+    <li>남은 일수 : {{ todo.remaining_days }}</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock content %} -->
+
+<!-- {% extends 'base.html' %}
+
+{% block title %}할일 목록{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for todo in to_do_list %}
+
+    <li>할일 제목 : {{ todo.name }}</li>
+
+
+    <li>생성 날짜 : {{ todo.date_created }}</li>
+
+    <li>데드라인 날짜 : {{ todo.date_deadline }}</li>
+
+    <li>남은 일수 : {{ todo.remaining_days }}</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock content %} -->

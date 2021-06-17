@@ -16,11 +16,21 @@ Including another URLconf
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path, include
-from pybo import views
+import common
+# from pybo import views
+# from todo import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pybo/', include('pybo.urls')),
     path('common/', include('common.urls')),
-    path('', views.index, name='index'),        # / 페이지에 해당하는 urlpatterns
+	path('todo/', include('todo.urls')),
+    path('', common.views.index),
 ]
+
+urlpatterns += static(
+	prefix=settings.MEDIA_URL, 
+    document_root=settings.MEDIA_ROOT, 
+)
