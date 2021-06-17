@@ -35,26 +35,6 @@ def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
     return render(request, 'pybo/question_detail.html', context)
-
-@login_required(login_url='common:login')
-def answer_create(request, question_id):
-    """
-    pybo 답변 등록
-    """
-    question = get_object_or_404(Question, pk=question_id)
-    if request.method == 'POST':
-        form = AnswerForm(request.POST)
-        if form.is_valid():
-            answer = form.save(commit=False)
-            answer.author = request.user
-            answer.create_date = timezone.now()
-            answer.question = question
-            answer.save()
-            return redirect('pybo:detail', question_id=question.id)
-    else:
-        form = AnswerForm()
-    context = {'question': question, 'form': form}
-    return render(request, 'pybo/question_detail.html', context)
     
 @login_required(login_url='common:login')
 def question_create(request):
@@ -98,6 +78,38 @@ def question_modify(request, question_id):
     return render(request, 'pybo/question_form.html', context)
 
 @login_required(login_url='common:login')
+def question_delete(request, question_id):
+    """
+    pybo 질문 삭제
+    """
+    question = get_object_or_404(Question, pk=question_id)
+    if request.user != question.author:
+        messages.error(request, '삭제권한이 없습니다')
+        return redirect('pybo:detail', question_id=question.id)
+    question.delete()
+    return redirect('pybo:index')
+
+@login_required(login_url='common:login')
+def answer_create(request, question_id):
+    """
+    pybo 답변 등록
+    """
+    question = get_object_or_404(Question, pk=question_id)
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            answer = form.save(commit=False)
+            answer.author = request.user
+            answer.create_date = timezone.now()
+            answer.question = question
+            answer.save()
+            return redirect('pybo:detail', question_id=question.id)
+    else:
+        form = AnswerForm()
+    context = {'question': question, 'form': form}
+    return render(request, 'pybo/question_detail.html', context)
+
+@login_required(login_url='common:login')
 def answer_modify(request, answer_id):
     """
     pybo 답변 수정
@@ -119,18 +131,6 @@ def answer_modify(request, answer_id):
         form = AnswerForm(instance=answer)
     context = {'answer': answer, 'form': form}
     return render(request, 'pybo/answer_form.html', context)
-
-@login_required(login_url='common:login')
-def question_delete(request, question_id):
-    """
-    pybo 질문 삭제
-    """
-    question = get_object_or_404(Question, pk=question_id)
-    if request.user != question.author:
-        messages.error(request, '삭제권한이 없습니다')
-        return redirect('pybo:detail', question_id=question.id)
-    question.delete()
-    return redirect('pybo:index')
 
 @login_required(login_url='common:login')
 def answer_delete(request, answer_id):

@@ -28,6 +28,8 @@ urlpatterns = [
     path('common/', include('common.urls')),
 	path('todo/', include('todo.urls')),
     path('', common.views.index),
+
+    # path('', base_views.index, name='index'),  # '/' 에 해당되는 path
 ]
 
 urlpatterns += static(
