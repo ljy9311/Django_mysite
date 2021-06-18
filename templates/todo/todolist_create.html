@@ -1,21 +1,9 @@
 {% extends 'base.html' %}
-{% block head %}
+{% load static %}
 
-<!-- bulma CSS -->
-<link rel="stylesheet" type="text/css" href="{% static '/bulma/css/style.css' %}">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-    $(function () {
-        $("#datepicker").datepicker();
-    });
-</script>
-
-{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/bulma/css/style.css' %}">
 
 <div class="box has-text-centered">
     <a href="{% url 'todo:todolist' %}">
