@@ -5,7 +5,8 @@
 사이트 이름 My Site.    
 수업 내용을 저장할 수 있는 Note와 Todo List로 구성됨.
   
-  
+## 스크린샷
+
 ![스크린샷1](https://user-images.githubusercontent.com/55902298/137299330-f2774dfb-c222-4264-a44c-521cca2e93c6.png)
 
 ![스크린샷2](https://user-images.githubusercontent.com/55902298/137299328-67908d5d-7867-493d-a8ec-67ca169a0e30.png)
@@ -30,3 +31,40 @@
 ![스크린샷10](https://user-images.githubusercontent.com/55902298/137299336-54152a80-c768-4183-9d02-4dc9c97aa5a9.png)
 
 ![스크린샷11](https://user-images.githubusercontent.com/55902298/137299332-c4ef478d-279f-4b30-a661-bd33b0c25f62.png)
+
+## 기술 스텍
+
+- Server
+    
+    centOS 7
+    
+- DB
+    
+    MariaDB
+    
+- Python
+    
+    3.8.5
+    
+    Django 3.1.3
+    
+- javascript
+    
+    jquery-3.6.0.min.js
+    
+- css
+    
+    bootstrap 4.5.3
+    
+- module
+    
+    requirements.txt 참조
+    
+
+## DB 구조
+
+![DB구조](https://user-images.githubusercontent.com/55902298/137299928-f7456d23-96b8-42f4-8e4d-5f6f38ab931e.png)
+
+## 소스 구성
+
+![소스구성](https://user-images.githubusercontent.com/55902298/137299931-92d1137d-8077-41b7-b711-5d150aeac4b0.png)
