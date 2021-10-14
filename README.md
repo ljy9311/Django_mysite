@@ -2,7 +2,8 @@
 
 ## 개요
 
-사이트 이름 My Site.  수업 내용을 저장할 수 있는 Note와 Todo List로 구성됨.
+사이트 이름 My Site.    
+수업 내용을 저장할 수 있는 Note와 Todo List로 구성됨.
   
   
 ![스크린샷1](https://user-images.githubusercontent.com/55902298/137299330-f2774dfb-c222-4264-a44c-521cca2e93c6.png)
