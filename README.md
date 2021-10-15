@@ -3,7 +3,8 @@
 ## 개요
 
 사이트 이름 My Site.    
-수업 내용을 저장할 수 있는 Note와 Todo List로 구성됨.
+회원가입, 로그인, 로그아웃 기능이 있고,      
+수업 내용을 저장할 수 있는 Note와 Todo List로 구성됨.    
   
 ## 스크린샷
 
@@ -68,3 +69,8 @@
 ## 소스 구성
 
 ![소스구성](https://user-images.githubusercontent.com/55902298/137299931-92d1137d-8077-41b7-b711-5d150aeac4b0.png)
+
+### 참고한 책,글
+
+점프 투 장고, https://djangojeng-e.github.io/2020/05/15/TodoList-1%ED%8E%B8-%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95/
+
